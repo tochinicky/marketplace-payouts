@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: payouts
+      POSTGRES_USER: payouts
+      POSTGRES_PASSWORD: payouts
+    ports:
+      - "5432:5432"
+
+  stripe-mock:
+    image: stripe/stripe-mock:latest
+    ports:
+      - "12111:12111"
